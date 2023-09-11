@@ -17,7 +17,7 @@ export default async function Movies() {
     <main className='grid grid-cols-5 gap-4 items-stretch p-4 max-w-[1280px] m-auto'>
       {movies.map((movie: any) => (
         <Image
-          className='rounded-lg'
+          className='rounded-lg hover:ring-pink-600 hover:ring-4'
           key={movie.Plot}
           src={movie.Poster.replace(/(^\w+:|^)\/\//, 'https://')}
           alt={movie.Title}
