@@ -11,8 +11,8 @@ export default function SplashScreen({ finishLoading }: any) {
   return (
     <div className='flex h-screen items-center justify-center'>
       <Image
-        id="logo"
-        src={"https://upload.wikimedia.org/wikipedia/commons/0/04/Funny_movie_logo.png"}
+        id="splash-screen"
+        src="/popcorn.png"
         alt='splash screen logo'
         width={300}
         height={300}
