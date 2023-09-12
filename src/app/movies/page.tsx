@@ -27,7 +27,7 @@ export default async function Movies() {
       {movies.map((movie: any, index: any) => (
         <Image
           key={movie.Plot}
-          className='rounded-lg hover:ring-pink-600 hover:ring-4'
+          className='rounded-lg hover:ring-pink-600 hover:ring-4 shadow-md'
           src={movie.Poster.replace(/(^\w+:|^)\/\//, 'https://')}
           alt={movie.Title}
           title={movie.Title}
