@@ -3,7 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react';
-import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 import { usePathname } from 'next/navigation'
 import SplashScreen from './components/SplashScreen';
 
@@ -34,7 +34,7 @@ export default function RootLayout({
           <SplashScreen finishLoading={() => setIsLoading(false)} />
         ) : (
           <>
-            <Navbar />
+            <Sidebar />
             {children}
           </>
         )}
