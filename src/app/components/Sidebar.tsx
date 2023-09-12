@@ -9,15 +9,13 @@ interface IButton {
   icon: string;
 }
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }: any) {
   const currentRoute = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
 
   function MenuButton(button: IButton) {
     return (
       <li>
-        <Link href={button.href} className={currentRoute === button.href ? "text-sm font-bold p-2 flex gap-2 mb-2 bg-pink-600 rounded" : "text-sm font-bold p-2 flex gap-2 mb-2"} onClick={() => setIsOpen(!isOpen)}>
+        <Link href={button.href} className={currentRoute === button.href ? "text-sm font-bold p-2 flex gap-2 mb-2 bg-pink-600 rounded items-center" : "text-sm font-bold p-2 flex gap-2 mb-2 items-center"} onClick={() => setIsOpen(!isOpen)}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d={button.icon} />
           </svg>
@@ -36,7 +34,7 @@ export default function Sidebar() {
           <rect y="60" width="100" height="20"></rect>
         </svg>
       </button>
-      <nav id="sidebar" className={isOpen ? "w-60 absolute p-4 h-full bg-black" : "w-60 absolute p-4 h-full bg-black hidden"}>
+      <nav id="sidebar" className={isOpen ? "w-60 absolute p-4 h-full bg-black z-10 shadow-lg shadow-white" : "w-60 absolute p-4 h-full bg-black hidden"}>
         <Image
           className='m-auto p-6'
           src="/popcorn.png"

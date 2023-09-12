@@ -22,20 +22,23 @@ export default function RootLayout({
   const pathname = usePathname()
   const isHome = pathname === '/'
   const [isLoading, setIsLoading] = useState(isHome);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (isLoading) return
   }, [isLoading])
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.className}>
+      <body className={isOpen ? "overflow-hidden" : ""}>
         {isLoading && isHome ? (
           <SplashScreen finishLoading={() => setIsLoading(false)} />
         ) : (
           <>
-            <Sidebar />
-            {children}
+            <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+            <div className={isOpen ? "opacity-10" : ""}>
+              {children}
+            </div>
           </>
         )}
       </body>
