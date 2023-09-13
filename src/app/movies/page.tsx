@@ -23,7 +23,7 @@ export default async function Movies() {
   };
 
   return (
-    <main className='grid lg:grid-cols-5 md:grid-cols-2 gap-4 items-stretch p-4 max-w-[1280px] m-auto'>
+    <main className='grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-4 items-stretch p-4 max-w-[1280px] m-auto'>
       {movies.map((movie: any, index: any) => (
         <Image
           key={movie.Plot}
