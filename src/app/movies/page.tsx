@@ -1,9 +1,22 @@
 'use client'
 import Image from 'next/image'
-import { getMoviesData } from './api';
+import { useState, useEffect } from 'react'
+import Loading from './Loading'
 
-export default async function Movies() {
-  const movies = await getMoviesData()
+export default function Movies() {
+  const [data, setData] = useState<any[]>([])
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('https://gist.githubusercontent.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4/raw/523c324c7fcc36efab8224f9ebb7556c09b69a14/Film.JSON')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <Loading />
 
   const handleKeyDown = (event: any) => {
     switch (event.keyCode) {
@@ -24,7 +37,7 @@ export default async function Movies() {
 
   return (
     <main className='grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-4 items-stretch p-4 max-w-[1280px] m-auto'>
-      {movies.map((movie: any, index: any) => (
+      {data.map((movie: any, index: number) => (
         <Image
           key={movie.Plot}
           className='rounded-lg hover:ring-pink-600 hover:ring-4 shadow-md'
