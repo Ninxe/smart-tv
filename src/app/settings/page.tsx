@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Smart TV - Settings',
+}
+
 export default function Settings() {
   return (
     <div className="w-full max-w-[500px] m-auto p-4 text-center">
