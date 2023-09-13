@@ -20,7 +20,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={inter.className}>
-      <title>Smart TV - Movies</title>
+      <title>Smart TV</title>
       <body className={isOpen ? "overflow-hidden" : ""}>
         {isLoading && isHome ? (
           <SplashScreen finishLoading={() => setIsLoading(false)} />
