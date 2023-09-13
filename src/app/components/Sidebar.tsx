@@ -1,14 +1,18 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image'
-
 interface IButton {
   href: string;
   name: string;
   icon: string;
 }
 
-export default function Sidebar({ isOpen, setIsOpen }: any) {
+type Props = {
+  isOpen: boolean;
+  setIsOpen: Function;
+}
+
+export default function Sidebar({ isOpen, setIsOpen }: Props) {
   const currentRoute = usePathname();
 
   function MenuButton(button: IButton) {

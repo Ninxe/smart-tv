@@ -1,12 +1,16 @@
-import { useEffect } from 'react'
-import Image from 'next/image'
+import Image from 'next/image';
+import { useEffect } from 'react';
 
-export default function SplashScreen({ finishLoading }: any) {
+type Props = {
+  finishLoading: Function;
+}
+
+export default function SplashScreen({ finishLoading }: Props) {
 
   useEffect(() => {
     const timeout = setTimeout(() => finishLoading())
     return () => clearTimeout(timeout)
-  }, [])
+  }, []);
 
   return (
     <div className='flex h-screen items-center justify-center'>

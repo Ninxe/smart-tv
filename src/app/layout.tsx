@@ -1,18 +1,18 @@
-'use client'
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { usePathname } from 'next/navigation'
+'use client';
+import './globals.css';
+import { Inter } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Sidebar from './components/Sidebar'
+import Sidebar from './components/Sidebar';
 import SplashScreen from './components/SplashScreen';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: Props) {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
@@ -34,5 +34,5 @@ export default function RootLayout({
         )}
       </body>
     </html>
-  )
+  );
 }

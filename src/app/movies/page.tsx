@@ -1,11 +1,11 @@
-'use client'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import LoadingImage from './LoadingImage'
+'use client';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import LoadingImage from './LoadingImage';
 
 export default function Movies() {
-  const [data, setData] = useState<any[]>([])
-  const [isLoading, setLoading] = useState(true)
+  const [data, setData] = useState<Function[]>([]);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://gist.githubusercontent.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4/raw/523c324c7fcc36efab8224f9ebb7556c09b69a14/Film.JSON')
@@ -14,7 +14,7 @@ export default function Movies() {
         setData(data)
         setLoading(false)
       })
-  }, [])
+  }, []);
 
   if (isLoading) return <LoadingImage />
 

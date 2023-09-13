@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Smart TV - Settings',
@@ -15,5 +15,5 @@ export default function Settings() {
         <p className="bg-gray-600 hover:bg-gray-900 transition ease-in-out p-2 rounded cursor-pointer">Spanish</p>
       </div>
     </div>
-  )
+  );
 }
