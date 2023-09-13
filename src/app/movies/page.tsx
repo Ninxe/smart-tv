@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
+import LoadingImage from './LoadingImage'
 
 export default function Movies() {
   const [data, setData] = useState<any[]>([])
@@ -16,7 +16,7 @@ export default function Movies() {
       })
   }, [])
 
-  if (isLoading) return <Loading />
+  if (isLoading) return <LoadingImage />
 
   const handleKeyDown = (event: any) => {
     switch (event.keyCode) {
