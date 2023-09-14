@@ -33,11 +33,9 @@ export async function generateMetadata({ params: { locale } }: Props) {
   const t = createTranslator({ locale, messages });
 
   return {
-    title: t('LocaleLayout.title')
+    title: t('Title.title')
   };
 }
-
-
 
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
   const messages = await getMessages(locale);
@@ -48,7 +46,6 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <>
-            {/*<SplashScreen />*/}
             <Sidebar />
             {children}
           </>
