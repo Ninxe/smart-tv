@@ -1,19 +1,6 @@
-import Image from 'next/image'
-import type { Metadata } from 'next'
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Smart TV - Welcome',
-}
-
-export default function Home() {
-  return (
-    <div className='flex items-center justify-center'>
-      <Image
-        src="/popcorn.png"
-        alt='popcorn logo'
-        width={300}
-        height={300}
-      />
-    </div>
-  )
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/en');
 }

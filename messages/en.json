@@ -1,0 +1,12 @@
+{
+  "SettingsPage": {
+    "title": "Change App Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "Sidebar": {
+    "home": "Welcome",
+    "movies": "Movies",
+    "settings": "Settings"
+  }
+}

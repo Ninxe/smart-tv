@@ -1,0 +1,12 @@
+{
+  "SettingsPage": {
+    "title": "Cambiar idioma de la aplicación",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "Sidebar": {
+    "home": "Bienvenido",
+    "movies": "Películas",
+    "settings": "Ajustes"
+  }
+}
