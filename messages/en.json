@@ -8,5 +8,8 @@
     "home": "Welcome",
     "movies": "Movies",
     "settings": "Settings"
+  },
+  "Title": {
+    "title": "Smart TV"
   }
 }
