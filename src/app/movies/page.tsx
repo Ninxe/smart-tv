@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import LoadingImage from './LoadingImage';
+import Link from 'next/link';
 
 export default function Movies() {
   const [data, setData] = useState<Function[]>([]);
@@ -36,20 +37,21 @@ export default function Movies() {
   };
 
   return (
-    <main className='grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-4 items-stretch p-4 max-w-[1280px] m-auto'>
+    <main className='grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-4 p-4 max-w-[1280px] m-auto'>
       {data.map((movie: any, index: number) => (
-        <Image
-          key={movie.Plot}
-          className='rounded-lg hover:ring-pink-600 hover:ring-4 shadow-md'
-          src={movie.Poster.replace(/(^\w+:|^)\/\//, 'https://')}
-          alt={movie.Title}
-          title={movie.Title}
-          height={270}
-          width={190}
-          tabIndex={index}
-          onKeyDown={handleKeyDown}
-          priority
-        />
+        <Link key={movie.imdbID} href={`/movies/${movie.imdbID}`} className="flex flex-wrap">
+          <Image
+            className='rounded-lg hover:ring-pink-600 hover:ring-4 shadow-md'
+            src={movie.Poster.replace(/(^\w+:|^)\/\//, 'https://')}
+            alt={movie.Title}
+            title={movie.Title}
+            height={270}
+            width={190}
+            tabIndex={index}
+            onKeyDown={handleKeyDown}
+            priority
+          />
+        </Link>
       ))}
     </main>
   )
