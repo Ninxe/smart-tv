@@ -7,6 +7,7 @@
 <p align="center">
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-run">How to Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-packages">Packages</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-learn-more">Learn More</a>&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -27,6 +28,11 @@ This project was developed by these next technologies:
 - Next.js / React
 - Typescript
 - Tailwind
+
+## 📦 Packages
+
+- next-intl (branch translations)
+- clsx (branch translations)
 
 ## 💻 How to Run
 
